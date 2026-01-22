@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms & Conditions.">
+    <title>Terms | Junofilms</title>
+    <link rel="icon" type="image/x-icon" href="/images/Junofilms-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+<body>
+
+    <div class="mouse-glow"></div>
+    <div class="noise-overlay"></div>
+
+    <nav class="fade-in-section">
+        <div class="nav-left">
+            <a href="https://www.junofilms.nl" class="logo">Junofilms</a>
+        </div>
+        <div class="nav-right">
+            <a href="https://www.junofilms.nl/about" class="nav-about">About</a>
+            <a href="https://www.junofilms.nl/contact" class="btn-contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero2 fade-in-section">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="" type="video/mp4">
+        </video>
+            <h1>Terms &<br>Conditions.</h1>
+    </header>
+
+    <section class="fade-in-section project-details">
+        <div class="">
+            <div class="credit-row"><span class="project-description">Under Construction.</span></div>
+        </div>
+    </section>
+
+
+         
+    <footer class="fade-in-section">
+        <div class="legal">
+            2026 JUNOFILMS
+        </div>
+        <div class="legal-link">
+            <a href="https://www.junofilms.nl/about">About</a>
+        </div>
+        <div class="legal-link">
+            <a href="https://www.junofilms.nl/contact">Contact</a>
+        </div>
+        <div class="legal-link">
+            <a href="https://www.junofilms.nl/terms">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mouse Glow Tracking
+        const glow = document.querySelector('.mouse-glow');
+        document.addEventListener('mousemove', (e) => {
+            window.requestAnimationFrame(() => {
+                glow.style.left = `${e.clientX}px`;
+                glow.style.top = `${e.clientY}px`;
+            });
+        });
+
+        // Intersection Observer for Smooth Fade-In
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

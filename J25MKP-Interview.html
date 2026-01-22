@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aan Tafel | Junofilms</title>
+    <link rel="icon" type="image/x-icon" href="/images/Junofilms-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+<body>
+
+    <div class="mouse-glow"></div>
+    <div class="noise-overlay"></div>
+
+    <nav class="fade-in-section">
+        <div class="nav-left">
+            <a href="https://www.junofilms.nl" class="logo">Junofilms</a>
+        </div>
+        <div class="nav-right">
+            <a href="https://www.junofilms.nl/about" class="nav-about">About</a>
+            <a href="https://www.junofilms.nl/contact" class="btn-contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="project-hero fade-in-section">
+        <div class="video-container fade-in-section">
+            <iframe src="https://player.vimeo.com/video/1140369579?h=703027b730&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="AAN TAFEL: Introductie"></iframe>        </div>
+    </section>
+
+    <section class="project-details fade-in-section">
+        <div class="credits-grid">
+            <div class="credit-row"><span class="project-title">Aan Tafel</span></div>
+            <div class="credit-row"><span class="project-description">In gesprek met fine-art fotograaf Mark Keppel over zijn aankomende portretserie <span class="italic">Aan Tafel.</span></span></div>
+            <div class="credit-row"><span class="credit-label">Aan Tafel</span></div>
+            <div class="credit-row"><span class="credit-label">An interview with fine-art photographer Mark Keppel discussing his upcoming series of portraits <span class="italic">Aan Tafel.</span></span></div>
+        </div>
+
+        <div class="credits-grid">
+            <div class="credit-row"><span class="credit-label">Director & DP</span> <a class="credit-value-link" href="https://www.junofilms.nl">Jari Bakker</a></div>
+            <div class="credit-row"><span class="credit-label">Edit & Color</span> <a class="credit-value-link" href="https://www.junofilms.nl">Jari Bakker</a></div>
+            <div class="credit-row"><span class="credit-label">Camera OP & Gaff</span> <a class="credit-value-link" href="https://www.thirdvision.art">Lars van den Hoek</a></div>
+            <div class="credit-row"><span class="credit-label">Talent</span> <a class="credit-value-link" href="https://www.verslicht.nl">Mark Keppel</a></div>
+        </div>
+    </section>
+
+    <section class="stills-section fade-in-section">
+        <section class="portfolio-section">
+            <div class="portfolio-label fade-in-section">Project Stills</div>
+        <div class="stills-stack fade-in-section">
+            <div class="still-item"><img src="images\J25MKP-Interview\J25MKP-Interview-still01.jpg" alt="Still 1"></div>
+            <div class="still-item"><img src="images\J25MKP-Interview\J25MKP-Interview-still02.jpg" alt="Still 2"></div>
+            <div class="still-item"><img src="images\J25MKP-Interview\J25MKP-Interview-still03.jpg" alt="Still 3"></div>
+        </div>
+        </section>
+    </section>
+
+    <footer class="fade-in-section">
+        <div class="legal">
+            2026 JUNOFILMS
+        </div>
+        <div class="legal-link">
+            <a href="https://www.junofilms.nl/about">About</a>
+        </div>
+        <div class="legal-link">
+            <a href="https://www.junofilms.nl/contact">Contact</a>
+        </div>
+        <div class="legal-link">
+            <a href="https://www.junofilms.nl/terms">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <img id="lightbox-img" src="" alt="Enlarged Still">
+    </div>
+
+    <script>
+        // Intersection Observer for Smooth Fade-In
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+
+        // --- Lightbox Logic ---
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const stillItems = document.querySelectorAll('.still-item img');
+
+stillItems.forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src; // Set the high-res source
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling while open
+    });
+});
+
+// Close lightbox on click
+lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+});
+
+// Close on 'Escape' key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+    </script>
+
+</body>
+</html>
