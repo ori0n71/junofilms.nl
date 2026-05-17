@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms & Conditions.">
-    <title>Terms | Junofilms</title>
+    <meta name="description" content="About Junofilms.">
+    <title>Blogs | Junofilms</title>
     <link rel="icon" type="image/x-icon" href="/images/Junofilms-favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
 
 <body>
 
@@ -28,18 +29,29 @@
 
     <header class="hero2 fade-in-section">
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="" type="video/mp4">
+            <source src="images/J26-About-01.mp4" type="video/mp4">
         </video>
-            <h1>Terms &<br>Conditions.</h1>
+        <h1>Blogs.</h1>
     </header>
 
     <section class="fade-in-section project-details">
         <div class="">
-            <div class="credit-row"><span class="project-description">Under Construction.</span></div>
+            <div class="credit-row"><span class="project-description">Recent posts:</span></div>
         </div>
     </section>
 
-
+    <div class="blog-preview-container fade-in-section">
+        <a href="https://junofilms.nl/blogs/001" class="blog-preview-card">
+            <div class="blog-preview-content">
+                <h2 class="blog-title">About Junofilms</h2>
+                <p class="blog-subtext">Who I am, how we got here, and what drives me.</p>
+                <span class="blog-read-time">May 17th 2026, 3 min read</span>
+            </div>
+            <div class="blog-preview-image">
+                <img src="images\Blogs\Post01.jpg">
+            </div>
+        </a>
+    </div>
          
     <footer class="fade-in-section">
         <div class="legal">
@@ -78,6 +90,4 @@
         document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
     </script>
 </body>
-
 </html>
-
