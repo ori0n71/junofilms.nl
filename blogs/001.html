@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Junofilms.">
+    <title>About Junofilms | Blog | Junofilms</title>
+    <link rel="icon" type="image/x-icon" href="/images/Junofilms-favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+
+<body>
+
+    <div class="mouse-glow"></div>
+    <div class="noise-overlay"></div>
+
+    <nav class="fade-in-section">
+        <div class="nav-left">
+            <a href="https://junofilms.nl" class="logo">Junofilms</a>
+        </div>
+        <div class="nav-right">
+            <a href="https://junofilms.nl/blogs" class="nav-about">Blogs</a>
+            <a href="https://junofilms.nl/contact" class="btn-contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero2 fade-in-section">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="/images/J26-About-01.mp4" type="video/mp4">
+        </video>
+            <h1>About Junofilms.</h1>
+    </header>
+
+    <section class="fade-in-section project-details">
+        <div class="">
+            <div class="credit-row"><span class="project-description">
+                Hiya, my name's Juno. It's a name I started using last summer, a name that is now synonymous with my creative work.
+                Nearing the end of 2025 I split off from <a class="credit-value-link" href="https://thirdvision.art">thirdvision</a>
+                as a means to prioritize creative documentary projects over commercial freelance work.<br>
+                <br>
+                Thus, <a class="credit-value-link" href="https://junofilms.nl">Junofilms</a> was born. I now work as a (mostly solo)
+                videographer and editor. When the chances pop up, I love collaborating with other creative minds. After all,
+                there's only so many light stands I feel like carrying all by myself while filming.<br>
+                <br>
+                From a young age I was pretty engaged with visual arts, and always felt I had some creative energy to give.
+                While this initially manifested as drawing and playing sandbox video games as a kid, those hobbies simply stayed hobbies.<br>
+                <br>
+                The day I first picked up a friend's camera though, I was hooked. From 2016 to 2022 I engaged with photography pretty
+                consistently, and by the summer of 2023 I had found my way into a video production internship that taught me some very
+                valuable lessons.<br>
+                <br>
+                Though I had little interest in the commercial nature of most of my work there, the production experience laid the
+                groundworks for my style of filmmaking. A rough plan, a basic timeline, and half a car full of gear.<br>
+                <br>
+                Where does that car venture off to? Wherever I can find a story or character worth documenting.
+                People with unique masteries, interests, or beautiful words that deserve to be spoken. Those are the people I'd like to feature.<br>
+                <br>
+                I find the most joy being able to fully focus on the image. Let me scout the location, set up my lights and flags, mount the camera.
+                Let me pour my heart into the film, so you can pour yours into the story.<br>
+                <br>
+                So what's the goal? I have yet to determine what grand project I want to have define me, or what products of art I want to
+                leave behind when my days are over. Day by day, project by project I slowly fly closer to what is important to me.<br>
+                <br>
+                Someday, I look forward to telling myself I can be proud of what I've created, and what it was able to mean to people. Until
+                that day comes, I will look to the sky, and enjoy both the sun and the clouds I soar past.
+            </span></div>
+
+            <div class="credit-row"><span class="credit-value">- Juno, 17/05/26</span></div>
+        </div>
+
+        <div class="">
+            <div>
+                <div class="credit-row">
+                    <span>
+                        <span class="credit-value">Author</span><br>
+                        <span class="credit-value">Date</span><br>
+                        <span class="credit-value">Read time</span><br>
+                    </span>
+                    <span>
+                        <a class="credit-value">Juno</a><br>
+                        <a class="credit-value">May 17th, 2026</a><br>
+                        <span class="credit-value">3 min</span><br>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="fade-in-section">
+        <div class="legal">
+            2026 JUNOFILMS
+        </div>
+        <div class="legal-link">
+            <a href="https://junofilms.nl/about">About</a>
+        </div>
+        <div class="legal-link">
+            <a href="https://junofilms.nl/contact">Contact</a>
+        </div>
+        <div class="legal-link">
+            <a href="https://junofilms.nl/terms">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mouse Glow Tracking
+        const glow = document.querySelector('.mouse-glow');
+        document.addEventListener('mousemove', (e) => {
+            window.requestAnimationFrame(() => {
+                glow.style.left = `${e.clientX}px`;
+                glow.style.top = `${e.clientY}px`;
+            });
+        });
+
+        // Intersection Observer for Smooth Fade-In
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
+
+
